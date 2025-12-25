@@ -93,9 +93,8 @@ header {
     text-decoration: none;
 }
 
-/* yahan se image बड़ा/छोटा control होगा */
 .logo img {
-    height: 60px;        /* 60px बड़ा है; 70–80 भी कर सकते हो अगर और बड़ा चाहिए */
+    height: 60px;
     width: auto;
     margin-right: 10px;
 }
@@ -105,7 +104,7 @@ header {
     display: flex;
     flex-direction: column;
     line-height: 1.15;
-    font-size: 1.4rem;    /* main “Gupta Properties” size */
+    font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: 0.5px;
     color: var(--primary);
@@ -120,17 +119,16 @@ header {
     color: var(--secondary);
 }
 
-/* MOBILE पर थोड़ा compact */
+/* MOBILE logo थोड़ा compact */
 @media (max-width: 480px) {
     .logo img {
-        height: 46px;     /* mobile पर थोड़ा छोटा */
+        height: 46px;
     }
 
     .logo-text {
         font-size: 1.2rem;
     }
 }
-
 
 .nav-menu {
     display: flex;
@@ -291,7 +289,7 @@ h2::after {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.4s ease;
-    height: 420px; /* fixed height for alignment */
+    height: 420px;
     display: flex;
     flex-direction: column;
 }
@@ -301,24 +299,26 @@ h2::after {
     box-shadow: var(--shadow-lg);
 }
 
+/* FIXED: always 3 horizontal photos on all screens */
 .office-photos {
     display: flex;
     gap: 8px;
     padding: 25px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    height: 180px;
+    height: auto;
+    align-items: stretch;
 }
 
 .office-photos img {
     width: calc(33.33% - 5px);
-    height: 100%;
+    height: 180px;
     object-fit: cover;
     border-radius: 15px;
     transition: transform 0.4s ease;
 }
 
 .office-photos img:nth-child(2) {
-    width: 33.33%;
+    width: calc(33.33% - 5px);
 }
 
 .office-photos img:hover {
@@ -715,15 +715,15 @@ section.visible {
         width: 250px;
     }
 
+    /* mobile par bhi office images horizontal hi rahengi */
     .office-photos {
-        flex-direction: column;
-        height: auto;
+        flex-direction: row;
     }
 
     .office-photos img {
-        width: 100%;
-        height: 120px;
-        margin-bottom: 8px;
+        width: calc(33.33% - 5px);
+        height: 140px;
+        margin-bottom: 0;
     }
 
     .offices-grid {
@@ -753,4 +753,3 @@ section.visible {
         min-height: 210px;
     }
 }
-
