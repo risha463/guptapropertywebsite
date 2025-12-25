@@ -298,26 +298,6 @@
     </div>
 
     <script src="script.js"></script>
-
-    <!-- छोटा JS सिर्फ images zoom के लिए -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const lightbox = document.getElementById('imgLightbox');
-            const lightboxImg = document.getElementById('imgLightboxImg');
-
-            document.querySelectorAll('img.zoomable').forEach(img => {
-                img.style.cursor = 'zoom-in';
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightbox.style.display = 'flex';
-                });
-            });
-
-            lightbox.addEventListener('click', () => {
-                lightbox.style.display = 'none';
-                lightboxImg.src = '';
-            });
-        });
-    </script>
 </body>
 </html>
+
